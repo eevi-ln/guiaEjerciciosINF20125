@@ -1,0 +1,89 @@
+%%%%% packages %%%%%
+\input glyphtounicode%
+\pdfgentounicode=1
+\usepackage[spanish]{babel}
+\usepackage{calc}
+\usepackage{fourier}
+\usepackage{colortbl}
+\usepackage{hhline}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{csquotes}
+\usepackage[colorlinks, urlcolor=blue]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{xparse}
+\usepackage{geometry}
+\usepackage{minted}
+\usepackage{wrapfig}
+\usepackage{multicol}
+\usepackage{tcolorbox}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{references.bib}
+
+%%%%% styles %%%%%
+\geometry{top=1.5cm, bottom=1.5cm, left=2.5cm, right=2.5cm}
+
+\graphicspath{{figs/}}
+\pagestyle{fancy}
+\aliaspagestyle{chapter}{fancy}
+
+\fancyfoot[C]{\thepage}
+
+\setlength{\parindent}{0pt}
+\setlength{\headheight}{15pt}
+\setlength{\textheight}{23cm}
+\setlength{\topmargin}{-0.5cm}
+
+\renewcommand{\footrulewidth}{0.4pt}
+
+\chapterstyle{section}
+
+\newminted[cppcode]{cpp}{
+    bgcolor=gray!10, 
+    fontsize=\small,
+    breaklines,
+    style=tango
+}
+
+\newminted[bashcode]{bash}{
+    bgcolor=gray!10,
+    fontsize=\small,
+    breaklines,
+    style=vim
+}
+
+\newmintedfile[cppfile]{cpp}{
+    bgcolor=gray!10, 
+    fontsize=\small,
+    breaklines,
+    style=tango
+}
+
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+%%%%% commands %%%%%%
+
+\renewcommand{\arraystretch}{1.25}
+
+\newcounter{boxesCounter}
+\setcounter{boxesCounter}{1}
+\newcommand{\sampleBoxes}[2]
+{
+	\tcbset{before=,after=\hfill, boxsep=0.5mm}
+	\addtocounter{boxesCounter}{1}
+	\begin{tcolorbox}[fonttitle=\bfseries, adjusted title=input,
+		equal height group=\theboxesCounter, sharp corners,
+		width=0.5\linewidth]
+		\texttt{#1}
+	\end{tcolorbox}
+	\begin{tcolorbox}[fonttitle=\bfseries, adjusted title=output,
+		equal height group=\theboxesCounter, sharp corners,
+		width=0.5\linewidth]
+		\texttt{#2}
+	\end{tcolorbox}
+}
+
+\newcommand{\urCornerArrow}{\rotatebox[origin=c]{-90}{$\Rsh$}}
+\newcommand{\lrCornerArrow}{\rotatebox[origin=c]{-180}{$\Rsh$}}
+\newcommand{\llCornerArrow}{\rotatebox[origin=c]{-270}{$\Rsh$}}

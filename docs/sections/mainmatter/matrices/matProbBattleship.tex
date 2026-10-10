@@ -1,0 +1,52 @@
+\section{Pedro es un tramposo} \label{matProbBattleship}
+Que bien, ya llegó el fin de semana. Tu grupo de amigos está contento pues, ¡eso significa que al fin podrán tener su anhelada noche de \textit{Battleship}! Las últimas veces que has jugado siempre terminas perdiendo contra Pedro, y ya estas empezando a sospechar que tal vez esté haciendo trampa. Siempre al terminar el juego ves su tablero y no tiene ninguna pieza dañada, es imposible.\\
+\begin{wraptable}{r}{0.5\linewidth}
+	\resizebox{\linewidth}{!}{
+	\ttfamily
+	\begin{tabular}{c|C{1em}|C{1em}|C{1em}|C{1em}|C{1em}|C{1em}|C{1em}|C{1em}|C{1em}|C{1em}|C{1em}|C{1em}|C{1em}|C{1em}|}
+		\cline{2-15}
+		N&.&.&.&.&.&.&.&.&.&.&.&.&.&.\\	\hhline{~--------------} 
+		M&.&.&.&.&.&.&.&.&.&.&.&.&.&.\\	\hhline{~--------------}
+		L&.&.&.&*&*&*&x&*&.&.&.&.&.&.\\	\hhline{~--------------}
+		K&.&.&.&.&.&.&.&.&.&.&*&.&.&.\\	\hhline{~--------------}
+		J&.&.&.&.&*&.&.&.&.&.&*&.&.&.\\	\hhline{~--------------}
+		I&.&*&.&.&*&.&.&.&.&.&*&.&.&.\\	\hhline{~--------------}
+		H&.&*&.&.&*&.&.&.&.&.&*&.&.&.\\	\hhline{~--------------}
+		G&\cellcolor{blue!10}.&\cellcolor{blue!10}*&\cellcolor{blue!10}.&\cellcolor{blue!10}.&\cellcolor{blue!10}.&\cellcolor{blue!10}.&\cellcolor{blue!10}.&\cellcolor{blue!10}.&\cellcolor{blue!10}.&\cellcolor{blue!10}.&\cellcolor{blue!40}\textbf{*}&.&.&.\\	\hhline{~--------------}
+		F&.&*&.&.&.&.&.&.&.&.&\cellcolor{blue!10}*&.&.&.\\	\hhline{~--------------}
+		E&.&*&.&.&x&x&x&x&.&.&\cellcolor{blue!10}.&.&.&.\\	\hhline{~--------------}
+		D&.&*&.&.&.&.&.&.&.&.&\cellcolor{blue!10}.&.&.&.\\	\hhline{~--------------}
+		C&.&*&.&.&.&.&.&.&.&.&\cellcolor{blue!10}.&.&.&.\\	\hhline{~--------------}
+		B&.&.&.&.&.&.&.&.&.&.&\cellcolor{blue!10}*&*&.&.\\	\hhline{~--------------}
+		A&.&.&.&.&.&.&.&.&.&.&\cellcolor{blue!10}.&.&.&.\\	\hhline{~--------------}
+		\multicolumn{1}{c}{}&
+		\multicolumn{1}{c}{1}&
+		\multicolumn{1}{c}{2}&
+		\multicolumn{1}{c}{3}&
+		\multicolumn{1}{c}{4}&
+		\multicolumn{1}{c}{5}&
+		\multicolumn{1}{c}{6}&
+		\multicolumn{1}{c}{7}&
+		\multicolumn{1}{c}{8}&
+		\multicolumn{1}{c}{9}&
+		\multicolumn{1}{c}{10}&	
+		\multicolumn{1}{c}{11}&	
+		\multicolumn{1}{c}{12}&	
+		\multicolumn{1}{c}{13}&	
+		\multicolumn{1}{c}{14}\\
+	\end{tabular}}
+	\caption{Tablero de battleship, se indica la coordenada \texttt{G11} en azul}
+	\label{tableroBattleship}
+\end{wraptable}
+Para esta ocasión has traido un tablero especia para Pedro que registra automáticamente cuando es dañada una pieza. Dado dos tableros, el tuyo y el de Pedro, junto con la lista de coordenadas a las que atacará cada uno deberás imprimir por pantalla ambos tableros en su estado final, además de indicar cuantos tiros acertó cada uno, y finalmente quien ganó (quien queda con una mayor cantidad de piezas en el tablero. \\
+Los tableros tienen dimensiones de $14\times14$ casillas, con las coordenadas del eje $x$ indicadas por números y las del $y$ con letras. Los espacios vacios son indicados por ``\texttt{.}'' y los con una pieza con ``\texttt{*}'' o ``\texttt{x}'' cuando ella está viva o destruida, respectivamente.
+Puede variar la cantidad de barcos en el tablero para cada jugador, y tambien la forma de estos, lo único fijo son las dimensiones del tablero.\\
+
+\textbf{INPUT}\\
+Las primeras $14$ lineas contienen $14$ caracteres cada una, indicando el estado de cada casilla de tú tablero de \textit{Battleship}, luego siguen otras $14$ líneas de $14$ caracteres, representando el tablero de Pedro.\\
+En las siguientes $2$ lineas se encuentran todas las coordenadas a las que atacan tú y Pedro respectivamente. Cada una en formato del tipo \texttt{A01} (ver Cuadro \ref{tableroBattleship})\\
+
+\textbf{OUTPUT}\\
+Las primeras $14$ líneas de salida deben contener el estado final de tu tablero, luego siguen otras $14$ lineas correspondiendo al estado final del tablero de Pedro. Finalmente siguen $3$ lineas, indicando cuantos tiros acertaste tú, cuantos acertó Pedro y finalmente quien es el ganador de la ronda.\\
+
+\textbf{EJEMPLOS}\\

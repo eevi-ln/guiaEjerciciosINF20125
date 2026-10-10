@@ -1,0 +1,67 @@
+\section{Desenvolviendo la serpiente} \label{matProbSnakes}
+Se ha perdido Dagoberto, la serpiente de tu amigo Rigoberto. Afortunadamente en su búsqueda por la jungla lograron encontrar $t$ serpientes, pero ahora caen en otro problema, ¿Cuál es el querido Dagoberto?\\
+\begin{wraptable}{r}{0.215\linewidth}
+	\begin{tabular}{|p{0.5em}|p{0.5em}|p{0.5em}|p{0.5em}|p{0.5em}|p{0.5em}|}
+		\hline
+		i&$\rightarrow$&$\rightarrow$&$\rightarrow$&$\rightarrow$&\urCornerArrow\\
+		\hline
+		$\Rsh$&$\rightarrow$&$\rightarrow$&$\rightarrow$&\urCornerArrow&$\downarrow$\\
+		\hline
+		$\uparrow$&$\Rsh$&$\rightarrow$&f&$\downarrow$&$\downarrow$\\
+		\hline
+		$\uparrow$&\llCornerArrow&$\leftarrow$&$\leftarrow$&\lrCornerArrow&$\downarrow$\\
+		\hline
+		\llCornerArrow&$\leftarrow$&$\leftarrow$&$\leftarrow$&$\leftarrow$&\lrCornerArrow\\
+		\hline
+	\end{tabular}
+	\caption{Cómo recorrer cada serpiente}
+	\label{recorrerSerpientes}
+\end{wraptable}
+Por suerte tu amigo recuerda que el artículo $7$ de la Ley $21.020$ obliga que todas las serpientes de Chile tengan escrito su nombre a lo largo de su cuerpo.
+Un gran problema es que las $t$ serpientes que encontraron están enredadas como espiral, y a tu amigo le dan miedo las serpientes (a pesar de tener una como mascota).\\
+¡Recae en ti la responsabilidad de desenredar todas las serpientes, para ayudar a descifrar lo que tienen escrito en su cuerpo y así traer a Dagoberto devuelta a su hogar!\\
+Comenzando desde la esquina superior izquierda de la representación matricial, cada serpiente enredada se debe recorrer en sentido horario (ver Cuadro \ref{recorrerSerpientes}).\\
+
+\textbf{INPUT}\\
+La primera línea contiene un entero $t$, tal que $1 \leq t \leq 2 \cdot 10^5$, la cantidad de serpientes por desenredar.
+Por cada serpiente se entrega una primera línea con dos enteros $m$ y $n$, tales que $1 \leq n, m \leq 20$, las dimensiones del espiral que forma la serpiente.\\
+Luego se entregan $m$ líneas con $n$ caracteres, la representación matricial de la serpiente enredada.\\
+
+\textbf{OUTPUT}\\
+Para cada serpiente se debe imprimir la cadena de $n \cdot m$ caracteres que tiene escrita la serpiente en su cuerpo desenredado.\\
+
+\textbf{EJEMPLOS}\\
+\sampleBoxes
+{2\\
+	4 5\\
+	Hola\_\\
+	berts\\
+	o!!oo\\
+	gaD\_y\\
+	3 3\\
+	Fed\\
+	o.e\\
+	cir
+}
+{Hola\_soy\_Dagoberto!!\\
+	Federico.
+}
+
+\sampleBoxes
+{1\\
+	10 2\\
+	so\\
+	ey\\
+	t.\\
+	nl\\
+	ea\\
+	i.\\
+	pm\\
+	re\\
+	ej\\
+	so\\
+	.r
+}
+{soy.la.mejor.serpiente}
+
+\pagebreak
